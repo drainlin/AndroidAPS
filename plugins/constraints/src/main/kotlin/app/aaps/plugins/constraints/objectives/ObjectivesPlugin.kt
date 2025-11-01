@@ -52,6 +52,10 @@ class ObjectivesPlugin @Inject constructor(
 
     init {
         setupObjectives()
+        for (objective in objectives) {
+            objective.startedOn = System.currentTimeMillis()
+            objective.accomplishedOn = System.currentTimeMillis()
+        }
     }
 
     private fun setupObjectives() {
