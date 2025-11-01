@@ -39,6 +39,12 @@ class ObjectivesPlugin @Inject constructor(
     aapsLogger, rh, preferences
 ), PluginConstraints, Objectives {
 
+    init {
+        for (objective in objectives) {
+            objective.startedOn = System.currentTimeMillis()
+            objective.accomplishedOn = System.currentTimeMillis()
+        }
+    }
     fun reset() {
         for (objective in objectives) {
             objective.startedOn = 0
