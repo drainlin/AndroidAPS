@@ -120,7 +120,7 @@ class MainApp : DaggerApplication() {
             setupRemoteConfig()
 
             // trigger here to see the new version on app start after an update
-            handler.postDelayed({ versionCheckersUtils.triggerCheckVersion() }, 30000)
+            // handler.postDelayed({ versionCheckersUtils.triggerCheckVersion() }, 30000)
 
             // Register all tabs in app here
             pluginStore.plugins = plugins
