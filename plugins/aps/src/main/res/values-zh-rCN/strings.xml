@@ -1,136 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--Autotune-->
-    <string name="high_temptarget_raises_sensitivity_title">高临时目标增加灵敏度</string>
-    <string name="high_temptarget_raises_sensitivity_summary"><![CDATA[当临时目标 >=100 mg/dl (5.5 mmol/l) 时提高灵敏度]]></string>
-    <string name="low_temptarget_lowers_sensitivity_title">低临时目标降低灵敏度</string>
-    <string name="low_temptarget_lowers_sensitivity_summary"><![CDATA[当临时目标 ＜= 100 mg/dl (5.5 mmol/l) 时降低灵敏度]]></string>
+    <!-- 自动调节 -->
+    <string name="key_autotune_last_run" translatable="false">key_autotune_last_run</string>
+
+    <string name="dynisf_adjust_sensitivity">启用基于总日剂量（TDD）的敏感性比率，用于基础胰岛素和血糖目标的调整</string>
+    <string name="dynisf_adjust_sensitivity_summary">使用最近24小时TDD与7天TDD的比值计算敏感性比率，用于增加或减少基础胰岛素速率，并在启用相关选项时调整血糖目标，方式与Autosens类似。建议初期关闭此选项</string>
+    <string name="dyn_isf_adjust_title" formatted="false">动态ISF调整因子 %</string>
+    <string name="dyn_isf_adjust_summary" formatted="false">动态ISF的调整因子。设置大于100%以增加更激进的纠正剂量，设置小于100%则纠正更保守。</string>
+    <string name="high_temptarget_raises_sensitivity_title">高临时目标提高敏感性</string>
+    <string name="high_temptarget_raises_sensitivity_summary"><![CDATA[对临时目标≥100时提高敏感性]]></string>
+    <string name="low_temptarget_lowers_sensitivity_title">低临时目标降低敏感性</string>
+    <string name="low_temptarget_lowers_sensitivity_summary"><![CDATA[对临时目标<100时降低敏感性]]></string>
     <string name="openapssmb">OpenAPS SMB</string>
-    <string name="openaps_smb_dynamic_isf">动态ISF(胰岛素敏感系数)</string>
-    <string name="smb_interval_summary">以分钟为单位设置SMB(微型大剂量) 的频率</string>
-    <string name="resistance_lowers_target_title">抗药时降低目标</string>
-    <string name="resistance_lowers_target_summary">当检测到胰岛素抵抗时，降低血糖的目标值。</string>
-    <string name="sensitivity_raises_target_title">敏感时提高目标</string>
-    <string name="sensitivity_raises_target_summary">当检测到胰岛素敏感时，提高血糖的目标值。</string>
+    <string name="openaps_smb_dynamic_isf">动态ISF</string>
+    <string name="openaps_auto_isf">自动ISF</string>
+    <string name="smb_interval_summary">SMB注射的间隔时间（分钟）</string>
+    <string name="resistance_lowers_target_title">胰岛素抵抗降低目标值</string>
+    <string name="resistance_lowers_target_summary">检测到胰岛素抵抗时，降低血糖目标</string>
+    <string name="sensitivity_raises_target_title">敏感性提高目标值</string>
+    <string name="sensitivity_raises_target_summary">检测到敏感性时，提高血糖目标</string>
     <string name="openapsma_disabled">插件已禁用</string>
-    <string name="openapsma_no_glucose_data">没有可用的血糖数据</string>
-    <string name="openaps_no_as_data">Autosens 数据不可用</string>
-    <string name="dynisf_shortname">动态ISF</string>
-    <string name="executing">正在执行</string>
+    <string name="openapsma_no_glucose_data">无可用血糖数据</string>
+    <string name="openaps_no_as_data">无可用Autosens数据</string>
+    <string name="dynisf_shortname">DYNISF</string>
+    <string name="autoisf_shortname">AUTOISF</string>
+    <string name="executing">执行中</string>
     <string name="openapsama">OpenAPS AMA</string>
-    <string name="array_of_elements">%1$d 元素的数组. \n 实际值:</string>
-    <string name="oaps_shortname">OpenAPS</string>
-    <string name="description_ama">算法的状态在2017年</string>
-    <string name="description_smb">最新的适合高级用户的算法</string>
-    <string name="description_smb_dynamic_isf">面向高级用户的最新算法，可以动态/自动调整ISF胰岛素敏感系数</string>
-    <string name="openapsama_bolus_snooze_dia_divisor">大剂量snooze 胰岛素持续作用时间除数</string>
-    <string name="openapsma_run">现在运行</string>
-    <string name="openapsma_last_run_label">上一次运行</string>
+    <string name="array_of_elements">数组，包含 %1$d 个元素。\n实际值：</string>
+    <string name="oaps_shortname">OAPS</string>
+    <string name="description_ama">2017年算法状态</string>
+    <string name="description_smb">最新高级用户算法</string>
+    <string name="description_smb_dynamic_isf">支持动态/自动ISF的最新高级用户算法</string>
+    <string name="description_auto_isf">带AutoISF扩展的最新高级用户算法</string>
+    <string name="openapsama_bolus_snooze_dia_divisor">餐后暂停DIA除数</string>
+
+    <string name="openapsma_run">立即运行</string>
+    <string name="openapsma_last_run_label">上次运行</string>
     <string name="openapsma_input_parameters_label">输入参数</string>
     <string name="openapsma_glucose_status_label">血糖状态</string>
-    <string name="openapsma_current_temp_label">当前临时基础率</string>
-    <string name="openapsma_iob_data_label">IOB活性胰岛素数据</string>
+    <string name="openapsma_current_temp_label">当前临时设置</string>
+    <string name="openapsma_iob_data_label">IOB数据</string>
     <string name="openapsma_profile_label">配置文件</string>
-    <string name="openapsma_meal_data_label">膳食数据</string>
+    <string name="openapsma_meal_data_label">餐食数据</string>
     <string name="openapsma_request_label">请求</string>
-    <string name="constraints">约束条件</string>
-    <string name="openapsma_autosensdata_label">Autosens 数据</string>
-    <string name="openapsma_script_debug_data_label">脚本调试</string>
+    <string name="constraints">限制条件</string>
+    <string name="openapsma_autosensdata_label">Autosens数据</string>
+    <string name="openapsma_script_debug_data_label">脚本调试数据</string>
     <string name="openapsama_use_autosens">使用Autosens功能</string>
-    <string name="openapsma_max_basal_title">临时基础率可以设置的最大值(U/小时)</string>
-    <string name="openapsma_max_basal_summary">这个值在 OpenAPS被称为最大基础率</string>
-    <string name="openapsma_max_iob_title">OpenAPS通过基础率可以输注的IOB活性胰岛素的最大值[U]</string>
-    <string name="openapsma_max_iob_summary">这个值在OpenAPS中被成为最大IOB\n这是APS单次可以输注的胰岛素的最大值[U]</string>
-    <string name="openapsama_autosens_adjust_targets_summary">缺省值：是\n　这是用来允许 autosens调整血糖目标，还有 ISF胰岛素敏感系数和基础率这些参数。</string>
-    <string name="openapsama_autosens_adjust_targets">Autosens自动调整胰岛素敏感系数时，也调整血糖目标值</string>
-    <string name="openapsama_min_5m_carb_impact_summary">默认值: 3.0  (AMA) 或者 8.0 (SMB)。这是默认的每5分钟碳水化合物吸收量。默认值为3毫克/dl/5 分钟。 当血糖的下降超过预期时, 或者不像预期的上升的那么多时，这个值就影响了活性碳水化合物的衰减速度, 以及在计算预测未来血糖时假设的碳水化合物吸收量,</string>
-    <string name="openapsama_max_daily_safety_multiplier_summary">默认值: 3 这是一个关键的 OpenAPS 安全阀值。这是限制你的闭环可以最大扩张3倍的日最大基础率。你可能不需要改变这个值 但你应该这个值的含义。日最大基础率的3倍，当前基础率的4倍，这是建议的安全阀值</string>
-    <string name="openapsama_current_basal_safety_multiplier_summary">默认值: 4 这是另一个的关键 OpenAPS 安全阀值, 日最大基础率的3倍，当前基础率的4倍，这是建议的安全阀值。这意味着你的基础率, 无论你的泵上的最大基础率设置的多少，也 不能超过你的当前基础率的4倍。这是为了防止人们在了解该算法的工作原理之前进入危险的领域 。同样, 默认值为 4倍; 大多数人将永远不需要调整, 而是更有可能需要调整其他设置,</string>
-    <string name="openapsama_bolus_snooze_dia_divisor_summary">默认值: 2 \n大剂量snooze是在输注餐时大剂量后开始生效的, 所以在你刚吃完饭的时候, 闭环不会因为你输注了大剂量而减少或停基础。这里的例子和缺省是 2; 因此, 3 小时的DIA(胰岛素持续作用时间) 意味着大剂量snooze将逐步在１. ５小时 (3 DIA/2) 后失效。</string>
-    <string name="openapsama_link_to_preference_json_doc_txt">注意! \n 正常地您不必在下面更改这些值。请点击这里, 阅读说明, 并确保您了解它之前不要更改任何这些值。</string>
-    <string name="always_use_short_avg">总是使用短时间的平均增量代替简单增量</string>
-    <string name="always_use_short_avg_summary">当血糖数据未经过滤时，如xDrip+数据嘈杂，此功能非常有用。</string>
-    <string name="openapsama_max_daily_safety_multiplier">最大日基础率安全倍数</string>
-    <string name="openapsama_current_basal_safety_multiplier">当前基础率安全倍数</string>
-    <string name="openapssmb_max_iob_title">OpenAPS的IOB活性胰岛素总数的最大值不能超过[U]</string>
-    <string name="openapssmb_max_iob_summary">该值在OpenAPS中称为最大 IOB\n如果当前IOB大于此值，则OpenAPS不会输注更多胰岛素</string>
-    <string name="enable_uam">启用 UAM</string>
-    <string name="enable_smb">启用微型大剂量</string>
-    <string name="enable_smb_summary">使用微型大剂量代替使用临时基础率，更快的干预</string>
-    <string name="enable_uam_summary">检测未输入的膳食</string>
-    <string name="enable_smb_always">始终启用 SMB</string>
-    <string name="enable_smb_after_carbs">在输入碳水化合物后启用SMB</string>
-    <string name="enable_smb_with_cob">启用带活性碳水化合物的SMB</string>
-    <string name="enable_smb_with_cob_summary">当有活性碳水化合物时启动SMB</string>
-    <string name="enable_smb_with_temp_target">启用带有临时目标的SMB</string>
-    <string name="enable_smb_with_temp_target_summary">当临时目标处于活动状态时启用 SMB (很快吃饭, 运动)</string>
-    <string name="enable_smb_with_high_temp_target">启用具有高临时目标的 SMB</string>
-    <string name="enable_smb_with_high_temp_target_summary">当激活较高的临时目标时，启用SMB微型大剂量(目标血糖大于100 mg/dl或5.5 mmol/l)</string>
-    <string name="smb_max_minutes_summary">基础率的最大分钟数限制SMB微型大剂量到</string>
-    <string name="uam_smb_max_minutes">UAM(未通知膳食) SMB(微型大剂量) 最大分钟数</string>
-    <string name="uam_smb_max_minutes_summary">监测到UAM(未通知膳食) 后启用SMB(微型大剂量) 替代基础率的最大分钟数</string>
-    <string name="carbs_req_threshold">碳水化合物需求建议的最小值</string>
-    <string name="carbs_req_threshold_summary">显示碳水化合物需求警告的最小克数。低于此数值的碳水化合物需求不会触发通知。</string>
-    <string name="lgs_threshold_title">触发暂停注射的低血糖值</string>
-    <string name="increasing_max_basal">增加最大基础率，因为设置参数低于你配置文件中的最大基础率</string>
-    <string name="max_basal_multiplier">最大基础率倍数</string>
-    <string name="max_daily_basal_multiplier">最大日基础率倍数</string>
-    <string name="smb_disabled_in_preferences">SMB微型大剂量在参数选项里被禁用了</string>
-    <string name="uam_disabled_in_preferences">UAM 在参数选项中被禁用了</string>
-    <string name="autosens_disabled_in_preferences">Autosens 在参数选项中被禁用了</string>
-    <!--    Verify if needed in safety-->
-    <string name="limiting_iob">由于 %2$s, 将 IOB(活性胰岛素) 限制为 %1$.1f U</string>
-    <string name="maxvalueinpreferences">在参数选项里的最大值</string>
+    <string name="openapsma_max_basal_title">临时基础胰岛素最大设置（单位/小时）</string>
+    <string name="openapsma_max_basal_summary">此值在OpenAPS中称为最大基础胰岛素</string>
+    <string name="openapsma_max_iob_title">OpenAPS可输送的最大基础IOB（单位）</string>
+    <string name="openapsma_max_iob_summary">此值在OpenAPS中称为最大IOB\n表示APS一次可输送的最大胰岛素量（单位）</string>
+    <string name="openapsama_autosens_adjust_targets_summary">默认值：true\n允许Autosens调整血糖目标，除调整ISF和基础胰岛素外</string>
+    <string name="openapsama_autosens_adjust_targets">Autosens也调整目标</string>
+    <string name="openapsama_min_5m_carb_impact" translatable="false">min_5m_carbimpact</string>
+    <string name="openapsama_min_5m_carb_impact_summary">默认值：3.0（AMA）或8.0（SMB）。设置每5分钟的默认碳水吸收影响。默认预计为3mg/dl/5分钟。影响COB的衰减速度以及预测未来血糖时的碳水吸收假设，尤其是在血糖下降超预期或升高不及预期时。</string>
+    <string name="openapsama_max_daily_safety_multiplier_summary">默认值：3。OpenAPS关键安全限制，限制基础胰岛素最高为您最大基础胰岛素速率的3倍。通常无需更改，但需了解此“每日最大3倍，当前最大4倍”安全限制的含义。</string>
+    <string name="openapsama_current_basal_safety_multiplier_summary">默认值：4。OpenAPS另一安全限制，与“每日最大3倍，当前最大4倍”对应。无论泵上设置的最大基础胰岛素是多少，基础胰岛素不能超过当前水平的4倍。防止用户误设过高的最大基础胰岛素，避免风险。大多数用户不需调整此值。</string>
+    <string name="openapsama_bolus_snooze_dia_divisor_summary">默认值：2\n餐后暂停在餐后注射胰岛素后生效，防止系统与低临时胰岛素冲突。示例及默认值为2，3小时DIA意味着餐后暂停将在1.5小时内逐渐结束（3DIA/2）。</string>
+    <string name="openapsama_link_to_preference_json_doc_txt">注意！\n通常不需要更改以下值。请点击此处仔细阅读文本并确保理解后再修改。</string>
+    <string name="openapsama_link_to_preference_json_doc" translatable="false">http://openaps.readthedocs.io/en/latest/docs/walkthrough/phase-3/beyond-low-glucose-suspend.html</string>
+    <string name="always_use_short_avg">始终使用短期平均增量代替简单增量</string>
+    <string name="always_use_short_avg_summary">当来自未过滤源（如xDrip+）的数据较为嘈杂时，此选项有用。</string>
+    <string name="openapsama_max_daily_safety_multiplier">每日最大安全倍数</string>
+    <string name="openapsama_current_basal_safety_multiplier">当前基础胰岛素安全倍数</string>
+    <string name="openapssmb_max_iob_title">OpenAPS最大允许IOB总量（单位）</string>
+    <string name="openapssmb_max_iob_summary">此值在OpenAPS中称为最大IOB\n当前IOB超过该值时，OpenAPS将不再增加胰岛素注射量</string>
+    <string name="enable_uam">启用未报告餐食检测（UAM）</string>
+    <string name="enable_smb">启用超级微量注射（SMB）</string>
+    <string name="enable_smb_summary">使用超级微量注射替代临时基础胰岛素，实现更快速的反应</string>
+    <string name="enable_uam_summary">未报告餐食的检测功能</string>
+    <string name="enable_smb_always">始终启用SMB</string>
+    <string name="enable_smb_always_summary">无论COB、临时目标或胰岛素注射情况，始终启用SMB。仅支持数据经过高级过滤的血糖来源。</string>
+    <string name="enable_smb_after_carbs">碳水摄入后启用SMB</string>
+    <string name="enable_smb_after_carbs_summary">碳水摄入后6小时内启用SMB，即使COB为0。仅支持数据经过高级过滤的血糖来源。</string>
+    <string name="enable_smb_with_cob">启用有COB时的SMB</string>
+    <string name="enable_smb_with_cob_summary">当有COB时启用SMB。</string>
+    <string name="enable_smb_with_temp_target">启用有临时目标时的SMB</string>
+    <string name="enable_smb_with_temp_target_summary">当临时目标激活时启用SMB（如即将进食、运动时）</string>
+    <string name="enable_smb_with_high_temp_target">启用高临时目标时的SMB</string>
+    <string name="enable_smb_with_high_temp_target_summary">当高临时目标激活时启用SMB（如运动，血糖高于100 mg/dl或5.5 mmol/l）</string>
+    <string name="smb_max_minutes_summary">限制SMB使用的最大基础胰岛素分钟数</string>
+    <string name="uam_smb_max_minutes">UAM SMB最大分钟数</string>
+    <string name="uam_smb_max_minutes_summary">限制UAM SMB使用的最大基础胰岛素分钟数</string>
+    <string name="carbs_req_threshold">建议触发的最低碳水摄入量</string>
+    <string name="carbs_req_threshold_summary">显示碳水建议提醒所需的最低碳水克数，低于此值的建议不会触发通知。</string>
+    <string name="lgs_threshold_summary">低血糖暂停胰岛素的血糖阈值。默认使用标准目标模型。用户可设定范围60mg/dl（3.3mmol/l）到100mg/dl（5.5mmol/l）。低于65/3.6时使用默认模型。</string>
+    <string name="lgs_threshold_title">低血糖暂停触发的血糖水平</string>
+
+    <string name="increasing_max_basal">因设置低于配置文件最大基础胰岛素，自动提高最大基础胰岛素值</string>
+    <string name="max_basal_multiplier">最大基础胰岛素倍数</string>
+    <string name="max_daily_basal_multiplier">最大每日基础胰岛素倍数</string>
+    <string name="smb_disabled_in_preferences">偏好设置中禁用SMB</string>
+    <string name="uam_disabled_in_preferences">偏好设置中禁用UAM</string>
+    <string name="autosens_disabled_in_preferences">偏好设置中禁用Autosens</string>
+    <string name="use_dynamic_sensitivity_title">启用动态敏感性</string>
+    <string name="use_dynamic_sensitivity_summary">调整算法以使用动态敏感性替代配置文件值</string>
+    <!--    验证是否需要安全限制 -->
+    <string name="limiting_iob">因%2$s，限制IOB为%1$.1f单位</string>
+    <string name="maxvalueinpreferences">偏好设置中的最大值</string>
     <string name="hardlimit">硬限制</string>
-    <!--    Autotune   -->
-    <!--    Loop -->
-    <string name="smb_frequency_exceeded">在最近3分钟内输注了大剂量，正在忽略SMB微型大剂量</string>
-    <string name="loop_shortname">闭环</string>
-    <string name="description_loop">激活或停用这个工具触发闭环。</string>
-    <string name="ignore5m">忽略5分钟</string>
-    <string name="ignore15m">忽略 15分钟</string>
-    <string name="ignore30m">忽略30分钟</string>
-    <string name="basal_set_correctly">正确地设置基础率</string>
+
+    <!--    自动调节 -->
+    <string name="insulin_peak">峰值</string>
+
+    <!--    闭环 -->
+    <string name="key_smb_enable_carbs_suggestions_threshold" translatable="false">smb_enable_carbs_suggestions_threshold</string>
+
+    <string name="run_now">立即运行</string>
+    <string name="smb_frequency_exceeded">最近3分钟内已注射胰岛素，跳过SMB</string>
+    <string name="pump_not_initialized">泵未初始化！</string>
+    <string name="loop_shortname">LOOP</string>
+    <string name="description_loop">激活或停用触发闭环的实现</string>
+    <string name="no_aps_selected">未选择APS或未提供结果</string>
+    <string name="ignore5m">忽略5分钟内数据</string>
+    <string name="ignore15m">忽略15分钟内数据</string>
+    <string name="ignore30m">忽略30分钟内数据</string>
+    <string name="carbs_suggestion">碳水建议</string>
+    <string name="open_loop_new_suggestion">有新建议可用</string>
+    <string name="basal_set_correctly">基础率设置正确</string>
+    <string name="last_run_label">上次运行</string>
     <string name="loop_aps_label">APS</string>
-    <!-- Autotune -->
-    <string name="autotune_shortname">自动调整</string>
-    <string name="autotune_settings">自动调整设置</string>
-    <string name="autotune_auto_title">自动化配置开关</string>
-    <string name="autotune_auto_summary">如果启用，Autotune 将在根据自动化规则计算后自动更新并切换到输入配置文件</string>
-    <string name="autotune_categorize_uam_as_basal_title">将 UAM 归类为基础率</string>
-    <string name="autotune_categorize_uam_as_basal_summary">仅当您可靠地输入了所有摄入的碳水化合物时才启用，使用此选项Autotune观测到血糖突然上升将用于建议更改基础率</string>
+    <string name="request_label">请求</string>
+    <string name="loop_constraints_processed_label">处理约束后</string>
+    <string name="loop_tbr_request_time_label">临时基础胰岛素请求时间</string>
+    <string name="loop_tbr_execution_time_label">临时基础胰岛素执行时间</string>
+    <string name="loop_tbr_set_by_pump_label">泵设置的临时基础胰岛素</string>
+    <string name="loop_smb_request_time_label">SMB请求时间</string>
+    <string name="loop_smb_execution_time_label">SMB执行时间</string>
+    <string name="loop_smb_set_by_pump_label">泵设置的SMB</string>
+    <string name="loop_open_mode_min_change">最小请求变化 [%]</string>
+    <string name="loop_open_mode_min_change_summary" formatted="false">仅当变化大于此百分比时，开放闭环才会弹出新的变更请求。默认值为20%</string>
+    <string name="fallback_smb_no_tdd">回退到SMB，TDD数据不足。</string>
+    <string name="fallback_to_isf_no_tdd">回退到配置文件敏感性，数据不足。原因：%1$s</string>
+
+    <!-- 自动调节 -->
+    <string name="autotune_description">辅助调整配置文件（ISF、碳水比和基础率）</string>
+    <string name="autotune_shortname">AT</string>
+    <string name="autotune_settings">自动调节设置</string>
+    <string name="autotune_auto_title">自动切换配置文件</string>
+    <string name="autotune_auto_summary">启用后，自动调节会根据自动化规则计算结果自动更新并切换输入配置文件。</string>
+    <string name="autotune_categorize_uam_as_basal_title">将未报告餐食（UAM）归类为基础率</string>
+    <string name="autotune_categorize_uam_as_basal_summary">仅当您可靠地输入了所有摄入碳水时启用，自动调节会将突然升高视为基础率调整建议。</string>
     <string name="autotune_tune_insulin_curve_title">调整胰岛素曲线</string>
-    <string name="autotune_tune_insulin_curve_summary">仅当您使用自由峰值胰岛素模型时时才启用，此选项将调整胰岛素峰值和DIA持续时间</string>
-    <string name="autotune_default_tune_days_title">数据天数</string>
-    <string name="autotune_circadian_ic_isf_title">在昼夜 IC/ISF 中应用平均结果</string>
-    <string name="autotune_circadian_ic_isf_summary">Autotune 不会调整昼夜节律变化，此选项仅将 IC 和 ISF 的平均调整应用于您的昼夜节律输入配置文件中</string>
-    <string name="autotune_additional_log_title">包含更多用于调试的日志信息</string>
-    <string name="autotune_additional_log_summary">仅当开发人员要求发送更多日志信息以帮助调试 Autotune 插件时才打开</string>
-    <string name="autotune_default_tune_days_summary">Autotune 处理数据的默认天数（最多 30 天）</string>
-    <string name="autotune_tunedprofile_name">已调整</string>
+    <string name="autotune_tune_insulin_curve_summary">仅当使用自由峰值时启用，调整峰值和DIA时长。</string>
+    <string name="autotune_default_tune_days_title">处理数据的天数</string>
+    <string name="autotune_circadian_ic_isf_title">应用昼夜节律平均IC/ISF</string>
+    <string name="autotune_circadian_ic_isf_summary">自动调节不调整昼夜节律变化，此选项仅将IC和ISF的平均调整应用于昼夜输入配置。</string>
+    <string name="autotune_additional_log_title">包含更多调试日志</string>
+    <string name="autotune_additional_log_summary">仅在开发者请求时开启，以发送更多日志帮助调试自动调节插件。</string>
+    <string name="autotune_default_tune_days_summary">自动调节默认处理数据天数（最多30天）</string>
+    <string name="autotune_tunedprofile_name">已调节</string>
     <string name="autotune_profile">配置文件：</string>
-    <string name="autotune_last_run">上一次运行</string>
-    <string name="autotune_warning">警告 :</string>
-    <string name="autotune_ic_warning">选定的配置文件包含 %1$d 个 IC 值。自动调整将使用 %2$.2f g/U</string>
-    <string name="autotune_isf_warning">选定的配置文件包含 %1$d 个 ISF 值。自动调节将使用 %2$.1f %3$s/U</string>
-    <string name="autotune_error">输入数据错误，尝试再次运行自动调谐或减少天数</string>
-    <string name="autotune_error_more_days">输入数据错误，增加天数</string>
-    <string name="autotune_warning_during_run">自动协调计算开始，请耐心等待</string>
+    <string name="autotune_last_run">上次运行：</string>
+    <string name="autotune_warning">警告：</string>
+    <string name="autotune_ic_warning">选定配置文件有 %1$d 个IC值。自动调节将使用 %2$.2f 克/单位</string>
+    <string name="autotune_isf_warning">选定配置文件有 %1$d 个ISF值。自动调节将使用 %2$.1f %3$s/单位</string>
+    <string name="autotune_error">输入数据错误，请重试自动调节或减少天数</string>
+    <string name="autotune_error_more_days">输入数据错误，请增加天数</string>
+    <string name="autotune_warning_during_run">自动调节计算已开始，请耐心等待</string>
     <string name="autotune_warning_after_run">使用前请仔细检查结果！</string>
-    <string name="autotune_partial_result">部分结果天数 %1$d / %2$d 已调整</string>
-    <string name="autotune_result">结果: %1$s</string>
+    <string name="autotune_partial_result">部分结果第 %1$d 天 / 共 %2$d 天已调节</string>
+    <string name="autotune_result">结果：%1$s</string>
     <string name="autotune_param">参数</string>
     <string name="autotune_percent">%</string>
     <string name="autotune_missing">缺失</string>
-    <string name="autotune_run">运行自动协调</string>
-    <string name="autotune_check_input_profile_button">检查输入配置</string>
+    <string name="autotune_run">运行自动调节</string>
+    <string name="autotune_check_input_profile_button">检查输入配置文件</string>
     <string name="autotune_compare_profile">比较配置文件</string>
     <string name="autotune_copy_localprofile_button">复制到本地配置文件</string>
     <string name="autotune_update_input_profile_button">更新输入配置文件</string>
-    <string name="autotune_revert_input_profile_button">检查输入配置</string>
-    <string name="autotune_copy_local_profile_message">从此 Autotune 配置文件创建新的本地配置文件？</string>
-    <string name="autotune_update_local_profile_message">用 Autotune 配置文件更新 %1$s 配置文件？</string>
-    <string name="autotune_revert_local_profile_message">使用输入配置文件还原 %1$s 配置文件？</string>
+    <string name="autotune_revert_input_profile_button">还原输入配置文件</string>
+    <string name="autotune_copy_local_profile_message">从此自动调节配置文件创建新的本地配置文件？</string>
+    <string name="autotune_update_local_profile_message">用自动调节配置文件更新 %1$s 配置文件？</string>
+    <string name="autotune_revert_local_profile_message">用输入配置文件还原 %1$s 配置文件？</string>
     <string name="autotune_profile_invalid">配置文件无效</string>
-    <!--    autoISF -->
+    <string name="autotune_log_title" translatable="false">|参数|配置文件|调节后|%/缺失\n</string>
+    <string name="autotune_log_separator" translatable="false">+------------------------------------------\n</string>
+    <string name="autotune_log_peak" translatable="false">| %1$4.4s |\t%2$d |\t%3$d |\n</string>
+    <string name="autotune_log_dia" translatable="false">| %1$4.4s |\t%2$3.1f |\t%3$3.1f |\n</string>
+    <string name="autotune_log_ic_isf" translatable="false">| %1$4.4s | %2$3.3f |\t%3$3.3f |\n</string>
+    <string name="autotune_log_basal" translatable="false">|\t%1$02.0f\t| %2$3.3f |%3$3.3f\t| %5$.0f%% / %4$d\n</string>
+    <string name="autotune_log_sum_basal" translatable="false">|\t∑\t|\t%1$3.1f |\t%2$3.1f |\n</string>
+    <string name="not_available_full">不可用</string>
+    <string name="pump_disconnected">泵断开连接</string>
+
+    <!--    自动ISF -->
+    <string name="half_basal_exercise_target_title">半基础运动目标</string>
+    <string name="half_basal_exercise_target_summary">设置数值，例如160，表示当临时目标为160 mg/dL且“高临时目标提高敏感性”为真时，基础率执行50%%（120=75%%；140=60%%）。</string>
+    <string name="autoISF_settings_title">自动ISF设置</string>
+    <string name="autoISF_settings_summary">自动ISF允许根据血糖变化情景调整胰岛素敏感因子（ISF）\n\n并可调整SMB输注设置</string>
+    <string name="smb_delivery_settings_title">SMB输注设置</string>
+    <string name="smb_delivery_settings_summary">一组选项，用于在ISF增强（即ISF较低）时增加实际可输注的SMB剂量。\n\n请谨慎使用</string>
+    <string name="openapsama_enable_autoISF">启用基于血糖行为的ISF调整</string>
+    <string name="openapsama_autoISF_max_summary">类似autosens_max，定义ISF最大强度。\n\n默认值1.0表示关闭此效果。\n\n警告：使用高于2.5的值时请极其小心</string>
+    <string name="openapsama_autoISF_min_summary">类似autosens_min，定义ISF最小强度。\n\n默认值1.0表示关闭此效果。</string>
+    <string name="openapsama_dura_ISF_weight_summary">用于持续较长时间的高血糖平台，增强ISF，可能增加胰岛素输注。\n\n默认值0.0表示关闭此效果。</string>
+    <string name="openapsama_lower_ISFrange_weight_summary">用于血糖低于目标时，减弱ISF，可能减少胰岛素输注。\n\n默认值0.0表示关闭此效果。</string>
+    <string name="openapsama_higher_ISFrange_weight_summary">用于血糖高于目标时，增强ISF，可能增加胰岛素输注。\n\n默认值0.0表示关闭此效果。</string>
+    <string name="openapsama_pp_ISF_weight_summary">用于血糖上升时，增强ISF，可能增加胰岛素输注。\n\n默认值0.0表示关闭此效果。</string>
+    <string name="openapsama_bgAccel_ISF_weight_summary">用于血糖加速上升时，增强ISF，可能增加胰岛素输注。\n\n默认值0.0表示关闭此效果。</string>
+    <string name="openapsama_bgBrake_ISF_weight_summary">用于血糖减速时，减弱ISF，可能减少胰岛素输注。\n\n默认值0.0表示关闭此效果。</string>
+    <string name="openapsama_autoISF_max">自动ISF最大比率\n(autoISF_max)</string>
+    <string name="openapsama_autoISF_min">自动ISF最小比率\n(autoISF_min)</string>
+    <string name="openapsama_lower_ISFrange_weight">低ISF范围权重\n(lower_ISFrange_weight)</string>
+    <string name="openapsama_higher_ISFrange_weight">高ISF范围权重\n(higher_ISFrange_weight)</string>
+    <string name="openapsama_pp_ISF_weight">餐后ISF权重\n(pp_ISF_weight)</string>
+    <string name="openapsama_bgAccel_ISF_weight">血糖加速时权重\n(bgAccel_ISF_weight)</string>
+    <string name="openapsama_bgBrake_ISF_weight">血糖减速时权重\n(bgBrake_ISF_weight)</string>
+    <string name="openapsama_dura_ISF_weight">持续时间ISF权重\n(dura_ISF_weight)</string>
+    <string name="openapsama_smb_delivery_ratio">固定SMB输注比例\n(smb_delivery_ratio)</string>
+    <string name="openapsama_smb_delivery_ratio_min">可变SMB输注比例下限\n(smb_delivery_ratio_min)</string>
+    <string name="openapsama_smb_delivery_ratio_max">可变SMB输注比例上限\n(smb_delivery_ratio_max)</string>
+    <string name="openapsama_smb_delivery_ratio_bg_range">可变SMB输注比例对应血糖范围\n(smb_delivery_ratio_bg_range)</string>
+    <string name="openapsama_smb_max_range_extension">SMB/UAM最大范围扩展\n(smb_max_range_extension)</string>
+    <string name="openapsama_smb_delivery_ratio_summary">默认值：0.5。OpenAPS另一关键安全限制，指定可作为SMB输注的总胰岛素比例。防止护理人员同时发起过多SMB请求。请谨慎逐步调整此实验性值。</string>
+    <string name="openapsama_smb_delivery_ratio_min_summary">默认值：0.5。可变输注比例的下限，线性递增区间的起点。</string>
+    <string name="openapsama_smb_delivery_ratio_max_summary">默认值：0.5。可变输注比例的上限，线性递增区间的终点。</string>
+    <string name="openapsama_smb_delivery_ratio_bg_range_summary">默认值：0。可变SMB输注比例映射至血糖范围[target_bg, target_bg+bg_range]。\n在target_bg时，SMB比例为smb_delivery_ratio_min；在target_bg+bg_range时，为smb_delivery_ratio_max。\n0表示禁用此线性调整，使用固定比例。</string>
+    <string name="openapsama_smb_max_range_extension_summary">默认值：1。OpenAPS另一关键安全限制，指定超出常规120分钟最大SMB/UAM的倍数。请谨慎逐步调整此实验性值。</string>
+    <string name="enableSMB_EvenOn_OddOff_always">根据活跃目标是否为偶数，启用SMB交替激活</string>
+    <string name="enableSMB_EvenOn_OddOff_always_summary">\n启用条件：\n活跃目标（mmol/L）的小数为偶数\n或活跃目标（mg/dL）为偶数\n\n否则禁用</string>
+    <string name="openapsama_iob_threshold_percent_summary" formatted="false">超过最大IOB百分比时禁用SMB。\n默认值：100%\n100%表示此功能实际关闭。</string>
+    <string name="openapsama_iob_threshold_percent">SMB最大IOB阈值百分比\n(iob_threshold_percent)</string>
 </resources>
