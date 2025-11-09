@@ -457,7 +457,16 @@ class MedtrumPlugin @Inject constructor(
     override fun addPreferenceScreen(preferenceManager: PreferenceManager, parent: PreferenceScreen, context: Context, requiredKey: String?) {
         if (requiredKey != null && requiredKey != "medtrum_advanced") return
 
-        var alarmEntries = arrayOf<CharSequence>("Light, vibrate and beep", "Light and vibrate", "Light and beep", "Light", "Vibrate and beep", "Vibrate", "Beep", "Silent")
+        var alarmEntries = arrayOf<CharSequence>(
+            "亮灯、振动和蜂鸣",
+            "亮灯和振动",
+            "亮灯和蜂鸣",
+            "亮灯",
+            "振动和蜂鸣",
+            "振动",
+            "蜂鸣",
+            "静音"
+        )
         var alarmValues = arrayOf<CharSequence>("0", "1", "2", "3", "4", "5", "6", "7")
 
         when (medtrumPump.pumpType()) {

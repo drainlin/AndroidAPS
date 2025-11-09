@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Source -->
-    <string name="description_source_ns_client">从 Nightscout 下载 血糖数据</string>
-    <string name="dexcom_app_patched">BYODA德康补丁版(构建你自己的德康应用Build Your Own Dexcom App)</string>
+    <!-- 来源 -->
+    <string name="key_last_processed_glunovo_timestamp" translatable="false">last_processed_glunovo_timestamp</string>
+    <string name="key_last_processed_intelligo_timestamp" translatable="false">last_processed_intelligo_timestamp</string>
+
+    <string name="ns_client_bg">Nightscout 客户端血糖</string>
+    <string name="ns_client_bg_short">NS 血糖</string>
+    <string name="description_source_ns_client">从 Nightscout 下载血糖数据</string>
+    <string name="source_xdrip">xDrip+ 血糖</string>
+    <string name="description_source_xdrip">接收来自 xDrip+ 的血糖数值。</string>
+    <string name="dexcom_app_patched">BYODA</string>
     <string name="dexcom_short">BYODA</string>
-    <string name="description_source_dexcom">从德康补丁版接收血糖数据(Build Your Own Dexcom App)。</string>
-    <string name="description_source_glimp">从 Glimp 接收血糖值。</string>
-    <string name="description_source_mm640g">从美敦力600Series 的AndroidUploader 接收血糖值。</string>
+    <string name="description_source_dexcom">接收来自“自己构建的 Dexcom 应用”（Build Your Own Dexcom App）的血糖数值。</string>
+    <string name="glimp">Glimp</string>
+    <string name="description_source_glimp">接收来自 Glimp 的血糖数值。</string>
+    <string name="mm640g">MM640g</string>
+    <string name="description_source_mm640g">接收来自 600SeriesAndroidUploader 的血糖数值。</string>
     <string name="poctech">Poctech</string>
-    <string name="description_source_poctech">从 Poctech app 接收血糖值。</string>
+    <string name="description_source_poctech">接收来自 Poctech 应用的血糖数值</string>
     <string name="glunovo">Glunovo</string>
-    <string name="description_source_glunovo">从Glunovo应用接收血糖数据。</string>
-    <string name="tomato">番茄（喵喵）</string>
-    <string name="tomato_short">番茄</string>
-    <string name="description_source_tomato">从番茄app(喵喵设备) 接收血糖值</string>
-    <!-- Patched Syai Tag App -->
-    <!-- Patched SI App -->
-    <!-- Patched Sino App -->
+    <string name="description_source_glunovo">接收来自 Glunovo 应用的数值</string>
+    <string name="intelligo">Intelligo</string>
+    <string name="description_source_intelligo">接收来自 Intelligo 应用的数值</string>
+    <string name="tomato">Tomato (喵喵设备)</string>
+    <string name="tomato_short">Tomato</string>
+    <string name="description_source_tomato">接收来自 Tomato 应用（喵喵设备）的血糖数值</string>
+    <string name="random_bg">随机血糖</string>
+    <string name="description_source_random_bg">生成随机血糖数据（仅演示模式）</string>
+    <string name="random_bg_short">血糖</string>
+
+    <string name="bgsource_settings">血糖来源设置</string>
+    <string name="bgsource_log_sensor_change_title">接受传感器启动</string>
+    <string name="bgsource_log_sensor_change_summary">当从血糖来源本地广播收到传感器启动时，自动在护理门户（Careportal）创建“CGM 传感器插入”事件</string>
+    <string name="direction">方向</string>
+    <string name="bg_generation_interval_minutes">血糖生成间隔（分钟）</string>
+    <!-- 改版 Ottai 应用 -->
+    <string name="ottai_app">Ottai</string>
+    <string name="description_source_patched_ottai_app">接收来自 Ottai 应用的血糖数据。</string>
+    <!-- 改版 Syai Tag 应用 -->
+    <string name="syai_tag_app">Syai Tag</string>
+    <string name="description_source_patched_syai_tag_app">接收来自 Syai Tag 应用的血糖数据。</string>
 </resources>
