@@ -123,7 +123,7 @@
     <string name="loopsuspended">闭环已暂停</string>
     <string name="trend_arrow">趋势箭头</string>
     <string name="a11y_autosens_label">自动灵敏度</string>
-    <string name="required">必填</string>
+    <string name="required">需要</string>
     <string name="a11y_arrow_double_down">快速下降</string>
     <string name="a11y_arrow_single_down">下降</string>
     <string name="a11y_arrow_forty_five_down">缓慢下降</string>
