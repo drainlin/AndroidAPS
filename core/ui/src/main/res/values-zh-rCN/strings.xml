@@ -429,8 +429,8 @@
     <string name="basalpct">基础率百分比</string>
     <string name="sensitivity">敏感度</string>
     <string name="isf_for_carbs">碳水计算和吸收的胰岛素敏感因子 (ISF): %1$.1f</string>
-    <string name="autosens_long">自动敏感度值: %.0f%%</string>
-    <string name="autosens_short">自动敏感度: %.0f%%</string>
+    <string name="autosens_long">AS: %.0f%%</string>
+    <string name="autosens_short">AS: %.0f%%</string>
     <string name="algorithm_long">算法中的自动敏感度: %.0f%%</string>
     <string name="algorithm_short">算法: %.0f%%</string>
     <string name="a11y_file">文件</string>
