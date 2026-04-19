@@ -1,6 +1,7 @@
 import org.gradle.kotlin.dsl.debugImplementation
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.ksp)
@@ -85,6 +86,24 @@ android {
 
     namespace = "app.aaps"
 
+    val signingProperties = Properties()
+    val signingPropertiesFile = project.file("key.properties")
+    val hasSigningProperties = signingPropertiesFile.exists()
+    if (hasSigningProperties) {
+        signingPropertiesFile.inputStream().use { signingProperties.load(it) }
+    }
+
+    if (hasSigningProperties) {
+        signingConfigs {
+            create("release") {
+                storeFile = project.file(signingProperties.getProperty("storeFile"))
+                storePassword = signingProperties.getProperty("storePassword")
+                keyAlias = signingProperties.getProperty("keyAlias")
+                keyPassword = signingProperties.getProperty("keyPassword")
+            }
+        }
+    }
+
     defaultConfig {
         minSdk = Versions.minSdk
         targetSdk = Versions.targetSdk
@@ -105,6 +124,9 @@ android {
             isDefault = true
             applicationId = "info.nightscout.androidaps"
             dimension = "standard"
+            if (hasSigningProperties) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             resValue("string", "app_name", "AAPS")
             versionName = Versions.appVersion
             manifestPlaceholders["appIcon"] = "@mipmap/ic_launcher"
@@ -231,4 +253,3 @@ if (!gitAvailable()) {
 // if (isMaster() && !allCommitted()) {
 //     throw GradleException("There are uncommitted changes. Clone sources again as described in wiki and do not allow gradle update")
 // }
-
