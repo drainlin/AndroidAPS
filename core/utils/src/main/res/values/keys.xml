@@ -2,5 +2,6 @@
 <resources>
     <!--    Keys-->
     <string name="key_units_mgdl" translatable="false">units_mgdl</string>
+    <string name="key_app_expiration" translatable="false">app_expiration</string>
 
 </resources>
